@@ -1,0 +1,10 @@
+{
+	"name" : "bonesnap/scanner",
+	"type" : "project",
+	
+	"autoload" : {
+		"psr-4" : {
+			"Scanner\\" : "src/"
+		}
+	}
+}
