@@ -2,12 +2,14 @@
 namespace Scanner\Movie;
 
 use Scanner\Data\General;
+use Scanner\Data\Video;
 use Scanner\MediaInfo\MediaInfo;
 
 class Movie
 {
 	public readonly bool    $remux;
 	public readonly General $general;
+	public readonly Video   $video;
 
 	public function __construct(private MediaInfo $mediaInfo) {}
 
@@ -29,6 +31,10 @@ class Movie
 		foreach ($tracks as $track) {
 			if ($track['@type'] === 'General') {
 				$this->general = new General($track);
+			}
+
+			if ($track['@type'] === 'Video' && $track['ID'] === '1') {
+				$this->video = new Video($track);
 			}
 		}
 	}
