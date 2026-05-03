@@ -1,0 +1,16 @@
+{
+	"general" : {
+		"fileSize"       : "79.6 GB",
+		"fileSizeBinary" : "74.1 GiB",
+		"duration"       : "2 h 3 min",
+		"bitRate"        : "86.2 Mb/s"
+	},
+	"video"   : {
+		"resolution"  : "3840x2160",
+		"bitRate"     : "77.9 Mb/s",
+		"aspectRatio" : "16:9",
+		"dolbyVision" : true,
+		"hdr10Plus"   : false,
+		"hdr10"       : true
+	}
+}
