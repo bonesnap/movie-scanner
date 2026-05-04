@@ -1,16 +1,28 @@
 {
-	"general" : {
+	"general"        : {
 		"fileSize"       : "68.8 GB",
 		"fileSizeBinary" : "64.1 GiB",
 		"duration"       : "2 h 15 min",
 		"bitRate"        : "67.5 Mb/s"
 	},
-	"video"   : {
+	"video"          : {
 		"resolution"  : "3840x2160",
 		"bitRate"     : "63.7 Mb/s",
 		"aspectRatio" : "16:9",
 		"dolbyVision" : true,
 		"hdr10Plus"   : false,
 		"hdr10"       : true
+	},
+	"primaryAudio"   : {
+		"name"     : "Dolby TrueHD with Dolby Atmos",
+		"codec"    : "TrueHD",
+		"channels" : 8,
+		"layout"   : "7.1"
+	},
+	"secondaryAudio" : {
+		"name"     : "Dolby Digital",
+		"codec"    : "AC3",
+		"channels" : 6,
+		"layout"   : "5.1"
 	}
 }
