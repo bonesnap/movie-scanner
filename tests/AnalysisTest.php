@@ -27,7 +27,7 @@ class AnalysisTest extends TestCase
 
 		foreach ($expected as $track => $propertyList) {
 			foreach ($propertyList as $property => $value) {
-				$this->assertSame($value, $movie->$track->$property, 'Failed for property: '.$property);
+				$this->assertSame($value, $movie->$track->$property, 'Failed for property: '.$track.' '.$property);
 			}
 		}
 	}
