@@ -2,6 +2,7 @@
 namespace Scanner\Movie;
 
 use Scanner\Data\Audio;
+use Scanner\Data\DataException;
 use Scanner\Data\General;
 use Scanner\Data\Video;
 use Scanner\MediaInfo\MediaInfo;
@@ -29,7 +30,7 @@ class Movie
 		$audioTracks = [];
 
 		if (empty($tracks)) {
-			throw new \Exception('No media data!');
+			throw new DataException('No media data for '.$this->title);
 		}
 
 		foreach ($tracks as $track) {
