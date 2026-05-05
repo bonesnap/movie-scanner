@@ -10,6 +10,7 @@ use Scanner\MediaInfo\MediaInfo;
 class Movie
 {
 	public readonly bool    $remux;
+	public readonly string  $title;
 	public readonly General $general;
 	public readonly Video   $video;
 	public readonly Audio   $primaryAudio;
@@ -20,8 +21,22 @@ class Movie
 	public function analyze(\SplFileInfo $fileInfo) : void
 	{
 		$this->remux = str_ends_with($fileInfo->getBasename('.'.$fileInfo->getExtension()), 'Remux');
+		$this->title = $this->parseTitle($fileInfo->getBasename('.'.$fileInfo->getExtension()));
 
 		$this->parseData($this->mediaInfo->run($fileInfo));
+	}
+
+	private function parseTitle(string $filename) : string
+	{
+		if (str_ends_with($filename, ' - Remux')) {
+			$filename = str_replace(' - Remux', '', $filename);
+		}
+
+		if (str_contains($filename, '{edition-')) {
+			return preg_replace('/\{edition-([\w\s]+)\}/i', '$1', $filename);
+		}
+
+		return $filename;
 	}
 
 	private function parseData(array $mediaInfo) : void
