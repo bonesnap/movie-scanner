@@ -6,7 +6,7 @@ readonly class Video
 	public string $resolution;
 	public string $bitRate;
 	public string $aspectRatio;
-	public bool   $dolbyVision;
+	public string $dolbyVision;
 	public bool   $hdr10Plus;
 	public bool   $hdr10;
 
@@ -15,7 +15,7 @@ readonly class Video
 		$this->resolution  = $this->formatResolution($data['Width'] ?? '', $data['Height'] ?? '');
 		$this->bitRate     = $this->formatBitrate($data['BitRate'] ?? '');
 		$this->aspectRatio = $this->formatAspectRatio($data['DisplayAspectRatio'] ?? '');
-		$this->dolbyVision = $this->supportsDolbyVision($data['HDR_Format'] ?? '');
+		$this->dolbyVision = $this->dolbyVision($data['HDR_Format'] ?? '', $data['HDR_Format_Profile'] ?? '', $data['HDR_Format_Compatibility'] ?? '');
 		$this->hdr10Plus   = $this->supportsHdr10Plus($data['HDR_Format'] ?? '', $data['HDR_Format_Compatibility'] ?? '');
 		$this->hdr10       = $this->supportsHdr10($data['HDR_Format'] ?? '', $data['HDR_Format_Compatibility'] ?? '');
 	}
@@ -46,13 +46,27 @@ readonly class Video
 		};
 	}
 
-	private function supportsDolbyVision(string $hdr) : bool
+	private function dolbyVision(string $hdrFormat, string $hdrFormatProfile, string $hdrCompatibility) : string
 	{
-		if (empty($hdr)) {
-			return false;
+		if (!str_starts_with($hdrFormat, 'Dolby Vision')) {
+			return 'No';
 		}
 
-		return str_starts_with($hdr, 'Dolby Vision');
+		$profile = match ($hdrFormatProfile) {
+			'dvhe.05 / ' => 'Profile 5',
+			'dvhe.07 / ' => 'Profile 7',
+			'dvhe.08 / ' => 'Profile 8',
+		};
+
+		if (str_starts_with($hdrCompatibility, 'Blu-ray')) {
+			$profile .= '.6';
+		} elseif (str_starts_with($hdrCompatibility, 'HDR10')) {
+			$profile .= '.1';
+		} else {
+			$profile .= '';
+		}
+
+		return $profile;
 	}
 
 	private function supportsHdr10Plus(string $hdr, string $compatibility) : bool

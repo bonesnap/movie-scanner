@@ -9,7 +9,7 @@
 		"resolution"  : "3840x2160",
 		"bitRate"     : "62.0 Mb/s",
 		"aspectRatio" : "16:9",
-		"dolbyVision" : true,
+		"dolbyVision" : "Profile 7.6",
 		"hdr10Plus"   : true,
 		"hdr10"       : false
 	},

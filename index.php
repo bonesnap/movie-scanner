@@ -40,9 +40,8 @@ try {
 	$dataRows = '';
 
 	foreach ($movies as $movie) {
-		$dolbyVision = ($movie->video->dolbyVision) ? 'Yes' : 'No';
-		$hdr10Plus   = ($movie->video->hdr10Plus) ? 'Yes' : 'No';
-		$hdr10       = ($movie->video->hdr10) ? 'Yes' : 'No';
+		$hdr10Plus = ($movie->video->hdr10Plus) ? 'Yes' : 'No';
+		$hdr10     = ($movie->video->hdr10) ? 'Yes' : 'No';
 
 		$rp = new ReflectionProperty(Movie::class, 'secondaryAudio');
 		if ($rp->isInitialized($movie)) {
@@ -58,7 +57,7 @@ try {
 			$dataRows .= '<td>'.$movie->general->fileSize.'</td>';
 			$dataRows .= '<td>'.$movie->general->duration.'</td>';
 			$dataRows .= '<td>'.$movie->general->bitRate.'</td>';
-			$dataRows .= '<td>'.$dolbyVision.'</td>';
+			$dataRows .= '<td>'.$movie->video->dolbyVision.'</td>';
 			$dataRows .= '<td>'.$hdr10Plus.'</td>';
 			$dataRows .= '<td>'.$hdr10.'</td>';
 			$dataRows .= '<td>'.$movie->video->resolution.'</td>';
