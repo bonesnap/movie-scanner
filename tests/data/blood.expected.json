@@ -1,0 +1,22 @@
+{
+	"general"        : {
+		"fileSize"       : "64.9 GB",
+		"fileSizeBinary" : "60.5 GiB",
+		"duration"       : "2 h 33 min",
+		"bitRate"        : "56.4 Mb/s"
+	},
+	"video"          : {
+		"resolution"  : "3840x2160",
+		"bitRate"     : "50.0 Mb/s",
+		"aspectRatio" : "16:9",
+		"dolbyVision" : "No",
+		"hdr10Plus"   : false,
+		"hdr10"       : true
+	},
+	"primaryAudio"   : {
+		"name"     : "DTS-HD Master Audio",
+		"codec"    : "DTS",
+		"channels" : 8,
+		"layout"   : "7.1"
+	}
+}

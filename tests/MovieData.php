@@ -9,6 +9,7 @@ trait MovieData
 		$movies = [
 			'2 Guns (2013)'                                 => '2guns',
 			'Apocalypse Now Redux (1979)'                   => 'apocalypse',
+			'Harry Potter and the Half-Blood Prince (2009)' => 'blood',
 			'Last Action Hero (1993)'                       => 'last',
 			'Mad Max: Fury Road (2015)'                     => 'madmax',
 			'National Lampoon\'s Christmas Vacation (1989)' => 'vacation',
