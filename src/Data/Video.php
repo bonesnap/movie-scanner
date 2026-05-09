@@ -53,9 +53,9 @@ readonly class Video
 		}
 
 		$profile = match ($hdrFormatProfile) {
-			'dvhe.05 / ' => 'Profile 5',
-			'dvhe.07 / ' => 'Profile 7',
-			'dvhe.08 / ' => 'Profile 8',
+			'dvhe.05 / ', 'dvhe.05' => 'Profile 5',
+			'dvhe.07 / ', 'dvhe.07' => 'Profile 7',
+			'dvhe.08 / ', 'dvhe.08' => 'Profile 8',
 		};
 
 		if (str_starts_with($hdrCompatibility, 'Blu-ray')) {
