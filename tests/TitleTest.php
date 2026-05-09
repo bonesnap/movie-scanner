@@ -105,4 +105,13 @@ class TitleTest extends TestCase
 		$movie = new Movie(new MediaInfo());
 		$movie->analyze(new SplFileInfo('filenames/The Super Mario Bros. Movie (2023) - Remux.mkv'));
 	}
+
+	public function testTheCore2003Title() : void
+	{
+		$this->expectException(DataException::class);
+		$this->expectExceptionMessage('No media data for The Core (2003)');
+
+		$movie = new Movie(new MediaInfo());
+		$movie->analyze(new SplFileInfo('filenames/The Core (2003) - Remux.mkv'));
+	}
 }

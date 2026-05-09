@@ -16,6 +16,7 @@ trait MovieData
 			'Nosferatu (2024)'                              => 'nosferatu',
 			'Oblivion (2013)'                               => 'oblivion',
 			'The Big Lebowski (1998)'                       => 'lebowski',
+			'The Core (2003)'                               => 'core',
 			'The Naked Gun (2025)'                          => 'naked',
 			'The Smashing Machine (2025)'                   => 'smashing',
 			'The Super Mario Bros. Movie (2023)'            => 'mario',

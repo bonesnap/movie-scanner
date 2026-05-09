@@ -61,7 +61,7 @@ class Movie
 			if (
 				$track['@type'] === 'Audio'
 				&& ($track['@typeorder'] ?? '' === '1' || $track['StreamOrder'] === '1')
-				&& $track['Language'] === 'en'
+				&& in_array($track['Language'], Audio::LANG, true)
 			) {
 				$audioTracks[] = new Audio($track);
 			}
