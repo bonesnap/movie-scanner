@@ -18,11 +18,5 @@
 		"codec"    : "TrueHD",
 		"channels" : 8,
 		"layout"   : "7.1"
-	},
-	"secondaryAudio" : {
-		"name"     : "Dolby Digital",
-		"codec"    : "AC3",
-		"channels" : 6,
-		"layout"   : "5.1"
 	}
 }

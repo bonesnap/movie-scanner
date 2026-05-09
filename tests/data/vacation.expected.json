@@ -18,11 +18,5 @@
 		"codec"    : "DTS",
 		"channels" : 6,
 		"layout"   : "5.1"
-	},
-	"secondaryAudio" : {
-		"name"     : "DTS-HD Master Audio",
-		"codec"    : "DTS",
-		"channels" : 2,
-		"layout"   : "2.0"
 	}
 }

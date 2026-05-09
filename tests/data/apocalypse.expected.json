@@ -18,11 +18,5 @@
 		"codec"    : "TrueHD",
 		"channels" : 8,
 		"layout"   : "7.1"
-	},
-	"secondaryAudio" : {
-		"name"     : "DTS-HD Master Audio",
-		"codec"    : "DTS",
-		"channels" : 8,
-		"layout"   : "7.1"
 	}
 }

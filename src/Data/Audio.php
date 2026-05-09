@@ -8,14 +8,6 @@ readonly class Audio
 	public int    $channels;
 	public string $layout;
 
-	public const array AUDIO_NAMES = [
-		'Dolby TrueHD with Dolby Atmos' => 100,
-		'DTS-HD MA + DTS:X'             => 80,
-		'DTS-HD Master Audio'           => 60,
-		'Dolby Digital Plus'            => 40,
-		'Dolby Digital'                 => 20,
-	];
-
 	public function __construct(array $data)
 	{
 		$this->name     = $data['Format_Commercial_IfAny'] ?? '';
