@@ -8,6 +8,11 @@ readonly class Audio
 	public int    $channels;
 	public string $layout;
 
+	public const array LANG = [
+		'en',
+		'en-US',
+	];
+
 	public function __construct(array $data)
 	{
 		$this->name     = $data['Format_Commercial_IfAny'] ?? '';
