@@ -23,6 +23,8 @@ class Movie
 		$this->remux = str_ends_with($fileInfo->getBasename('.'.$fileInfo->getExtension()), 'Remux');
 		$this->title = $this->parseTitle($fileInfo->getBasename('.'.$fileInfo->getExtension()));
 
+		echo 'Scanning '.$this->title.PHP_EOL;
+
 		$this->parseData($this->mediaInfo->run($fileInfo));
 	}
 
